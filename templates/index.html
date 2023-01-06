@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body{
+            width: 75%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        div {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            grid-auto-rows: minmax(100px, auto);
+        }
+        ul{
+            width: 75%;
+            list-style: none;
+            border: 5px solid #000;
+            border-radius: 25px;
+            background-color: azure;
+        }
+        li{
+            float: left;
+            background-color: rgb(184, 111, 166);
+            width: 45%;
+            margin: 2% 2% 2% 0;
+            padding: 30px 0;
+            border: 1px solid #000;
+            border-radius: 15px;
+            text-align: center;
+        }
+
+        @media (max-width: 640px) {
+        li{
+            width: 47%;
+        }
+        }
+    </style>
+    <title>Box 10.30 10.30</title>
+</head>
+<body>
+    <center>
+        <h1>
+            Today <br>
+            <script> document.write(new Date().toLocaleDateString()); </script>
+        </h1>
+    </center>
+    <div>
+    {% for item in options %}
+    <ul>
+            {% for element in item.split(',') %}
+            <li>{{ element }}</li>
+            {% endfor %}
+    </ul>
+    {% endfor %}
+</div>
+    
+</body>
+</html>
